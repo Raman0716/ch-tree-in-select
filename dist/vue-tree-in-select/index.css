@@ -1,0 +1,194 @@
+.ch_select {
+  position: relative;
+  width: 260px;
+}
+.ch_select .ch-input__inner {
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  height: 40px;
+  padding: 0px 20px 0 12px;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+.ch_select .has-val {
+  color: #222;
+}
+.ch_select .is-focus .ch-input__inner {
+  border-color: #409eff;
+}
+.ch_select .ch-content {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ch_select .ch-input__suffix {
+  position: absolute;
+  right: 6px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #999;
+  color: #c0c4cc;
+  pointer-events: none;
+  transition: all 0.3s ease 0s;
+}
+.ch_select .fix_select {
+  position: absolute;
+  padding: 5px;
+  left: 0;
+  top: 45px;
+  min-width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  box-shadow: 0 5px 5px #eee;
+}
+.ch_select .fix_select::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #ddd;
+}
+.ch_node_item .ch_node_title {
+  display: flex;
+  align-items: center;
+}
+.ch_node_item .node_label {
+  flex-grow: 1;
+}
+.ch_node_item .ch-icon-caret-bottom {
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-right: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #999;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.08s ease-in 0.05s;
+  transform-origin: center;
+  transform: rotateZ(-90deg);
+}
+.ch_node_item .in_select {
+  cursor: pointer;
+}
+.ch_node_item .select_active {
+  color: #409eff;
+  font-weight: bold;
+}
+.ch_node_item .ch-icon-caret-right {
+  transform: rotateZ(0);
+}
+.ch_node_item .ch_circular {
+  display: inline-block;
+  margin-right: 4px;
+  animation: ani-circle 1.5s linear infinite;
+}
+.ch_node_item .ch_circular::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border-top: 2px solid #409eff;
+  border-bottom: 2px solid #409eff;
+  display: inline-block;
+}
+@keyframes ani-circle {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.ch_node_item .kid_node {
+  padding-left: 15px;
+}
+.ch_node_checkbox {
+  color: #606266;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+  margin-right: 8px;
+}
+.ch_node_checkbox .ch-checkbox__inner {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #dcdfe6;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  z-index: 1;
+}
+.ch_node_checkbox .ch-checkbox__inner:after {
+  box-sizing: content-box;
+  content: '';
+  border: 1px solid #fff;
+  border-left: 0;
+  border-top: 0;
+  height: 7px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg) scaleY(0);
+  width: 3px;
+  transition: transform 0.15s ease-in 0.05s;
+  transform-origin: center;
+}
+.ch_node_checkbox .ch-checkbox__input {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+}
+.ch_node_checkbox .ch-checkbox__input.is-disabled .ch-checkbox__inner {
+  background-color: #edf2fc;
+  border-color: #dcdfe6;
+  cursor: not-allowed;
+}
+.ch_node_checkbox .ch-checkbox__input.is-checked .ch-checkbox__inner,
+.ch_node_checkbox .ch-checkbox__input.is-indeterminate .ch-checkbox__inner {
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.ch_node_checkbox .ch-checkbox__input.is-checked .ch-checkbox__inner:after {
+  transform: rotate(45deg) scaleY(1);
+}
+.ch_node_checkbox .ch-checkbox__input.is-indeterminate .ch-checkbox__inner:after {
+  transform: rotate(0);
+  background-color: #edf2fc;
+  height: 1px;
+  top: 5px;
+  width: 6px;
+  left: 2px;
+}
+.ch_node_checkbox .ch-checkbox__original {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  margin: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
